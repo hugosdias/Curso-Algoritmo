@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main(){
+    
+    double preco, recebido, troco, falta;
+    int qtd;
+    
+    printf("Preço unitário do produto: ");
+    scanf("%lf", &preco);
+    printf("Quantidade comprada: ");
+    scanf("%d", &qtd);
+    printf("Dinheiro recebido: ");
+    scanf("%lf", &recebido);
+    
+    troco = recebido - (preco * qtd);
+    falta = (preco * qtd) - recebido;
+    
+    if (recebido < preco * qtd) {
+        printf("Dinheiro insuficiente!\n");
+        printf("Falta: R$ %.2lf", falta);
+    }
+    
+    else {
+        printf("Troco: R$ %.2lf", troco);
+    }
+    return 0;
+}
